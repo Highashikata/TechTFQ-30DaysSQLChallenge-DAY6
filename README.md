@@ -168,4 +168,15 @@ WHERE
 
 
 
+
+### **Remarques**
+
+- La première requête LEFT SELF JOIN (avec COALESCE) remplace les valeurs NULL par 0, ce qui permet à la condition de la clause WHERE d'être évaluée pour toutes les lignes de s1, même si aucune correspondance n'est trouvée dans s2.
+- La deuxième requête LEFT SELF JOIN ne traite pas les valeurs NULL de s2.MARKS, donc les lignes où s2.MARKS est NULL sont exclues du résultat final.
+C'est pourquoi la première requête avec COALESCE peut inclure la première ligne, car même si s2.MARKS est NULL pour cette ligne, il est remplacé par 0 grâce à COALESCE, ce qui permet à la condition s1.MARKS > 0 d'être évaluée comme vraie.
+
+
+
+
+
 ```
