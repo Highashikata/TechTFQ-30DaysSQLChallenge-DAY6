@@ -167,6 +167,7 @@ WHERE
     s1.MARKS > s2.MARKS;
 
 
+```
 
 
 ### **Remarques**
@@ -179,4 +180,3 @@ C'est pourquoi la première requête avec COALESCE peut inclure la première lig
 
 
 
-```
